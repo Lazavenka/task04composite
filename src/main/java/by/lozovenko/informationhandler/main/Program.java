@@ -1,5 +1,7 @@
 package by.lozovenko.informationhandler.main;
 
+import by.lozovenko.informationhandler.chain.ParagraphHandler;
+import by.lozovenko.informationhandler.composite.*;
 import by.lozovenko.informationhandler.exception.ProjectException;
 import by.lozovenko.informationhandler.reader.CustomFileReader;
 import by.lozovenko.informationhandler.reader.impl.CustomFileReaderImpl;
@@ -17,6 +19,13 @@ public class Program {
         CustomFileReader reader = new CustomFileReaderImpl();
         String content = reader.readContentFromFile(absolutePath);
 
-       LOGGER.log(Level.INFO, content);
+        LOGGER.log(Level.INFO, content);
+
+        TextComposite text = new TextComposite(TextComponentType.TEXT);
+        text.add(new LeafSymbol('\t', TextComponentType.SYMBOL, SymbolType.PUNCTUATION));
+        ParagraphHandler handler = new ParagraphHandler();
+        handler.handleRequest(text, content);
+
+        LOGGER.log(Level.INFO, text.compose());
     }
 }

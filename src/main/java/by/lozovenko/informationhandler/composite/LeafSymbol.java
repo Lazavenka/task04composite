@@ -36,4 +36,24 @@ public class LeafSymbol implements TextComponent{
     public List<TextComponent> getChildren() {
         throw new UnsupportedOperationException("Can't return children from leaf element!");
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        LeafSymbol that = (LeafSymbol) o;
+
+        if (symbol != that.symbol) return false;
+        if (symbolType != that.symbolType) return false;
+        return componentType == that.componentType;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = symbolType.hashCode();
+        result = 31 * result + componentType.hashCode();
+        result = 31 * result + symbol;
+        return result;
+    }
 }

@@ -4,7 +4,7 @@ import by.lozovenko.informationhandler.composite.TextComponentType;
 import by.lozovenko.informationhandler.composite.TextComposite;
 
 public class LexemeHandler extends AbstractHandler{
-    private static final String LEXEME_DELIMITER = "\s";
+    private static final String LEXEME_DELIMITER = "\s+";
     private AbstractHandler successor = new WordHandler();
     @Override
     public void handleRequest(TextComposite composite, String text) {

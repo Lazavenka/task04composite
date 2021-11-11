@@ -1,7 +1,7 @@
 package by.lozovenko.informationhandler.composite;
 
 public enum TextComponentType {
-    TEXT("\n"),
+    TEXT(""),
     PARAGRAPH("\n\t"),
     SENTENCE(""),
     LEXEME(" "),

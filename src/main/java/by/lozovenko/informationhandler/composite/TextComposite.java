@@ -36,4 +36,22 @@ public class TextComposite implements TextComponent{
     public List<TextComponent> getChildren() {
         return components;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TextComposite that = (TextComposite) o;
+
+        if (type != that.type) return false;
+        return components.equals(that.components);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = type.hashCode();
+        result = 31 * result + components.hashCode();
+        return result;
+    }
 }
