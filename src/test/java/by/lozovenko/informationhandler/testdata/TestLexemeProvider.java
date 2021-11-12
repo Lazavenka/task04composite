@@ -5,6 +5,7 @@ import by.lozovenko.informationhandler.composite.*;
 public class TestLexemeProvider {
     public static final String TEST_SCIENCE_LEXEME = "Science!";
     public static final String TEST_OB_RUN_LEXEME = "ob.run()";
+    public static final String TEST_RIGA_LEXEME = "(Рига)";
     public static final String TEST_JAVA_LEXEME = "JAVA";
     public static TextComponent createExpectedScienceLexeme(){
         TextComponent lexeme = new TextComposite(TextComponentType.LEXEME);
@@ -51,6 +52,22 @@ public class TestLexemeProvider {
 
         lexeme.add(word);
 
+        return lexeme;
+    }
+
+    public static TextComponent createExpectedRigaLexeme(){
+        TextComponent lexeme = new TextComposite(TextComponentType.LEXEME);
+        TextComponent word = new TextComposite(TextComponentType.WORD);
+
+
+        word.add(new LeafSymbol('Р', TextComponentType.SYMBOL, SymbolType.LETTER));
+        word.add(new LeafSymbol('и', TextComponentType.SYMBOL, SymbolType.LETTER));
+        word.add(new LeafSymbol('г', TextComponentType.SYMBOL, SymbolType.LETTER));
+        word.add(new LeafSymbol('а', TextComponentType.SYMBOL, SymbolType.LETTER));
+
+        lexeme.add(new LeafSymbol('(', TextComponentType.SYMBOL, SymbolType.PUNCTUATION));
+        lexeme.add(word);
+        lexeme.add(new LeafSymbol(')', TextComponentType.SYMBOL, SymbolType.PUNCTUATION));
         return lexeme;
     }
 }

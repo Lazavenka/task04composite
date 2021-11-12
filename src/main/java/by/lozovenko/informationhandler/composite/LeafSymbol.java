@@ -14,7 +14,7 @@ public class LeafSymbol implements TextComponent{
     }
     @Override
     public String compose() {
-        return String.valueOf(symbol);
+        return String.valueOf(symbol + " '" + symbolType + "' "); //TODO return String.valueOf(symbol);
     }
 
     @Override

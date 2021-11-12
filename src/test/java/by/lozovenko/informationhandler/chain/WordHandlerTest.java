@@ -43,4 +43,13 @@ public class WordHandlerTest {
 
         assertEquals(lexeme, expectedJavaLexeme);
     }
+
+    @Test
+    public void testHandleRequestRigaWord() {
+        TextComponent expectedJavaLexeme = TestLexemeProvider.createExpectedRigaLexeme();
+
+        handler.handleRequest(lexeme, TestLexemeProvider.TEST_RIGA_LEXEME);
+
+        assertEquals(lexeme, expectedJavaLexeme);
+    }
 }
