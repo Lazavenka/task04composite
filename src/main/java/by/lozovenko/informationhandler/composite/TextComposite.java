@@ -14,7 +14,7 @@ public class TextComposite implements TextComponent{
     public String compose(){
         StringBuilder stringBuilder = new StringBuilder();
         components.forEach(component -> stringBuilder.append(component.compose()));
-        stringBuilder.append(" '").append(type).append("' "); //TODO stringBuilder.append(type.getPostfix());
+        stringBuilder.append(type.getPostfix());
         return stringBuilder.toString();
     }
     @Override
