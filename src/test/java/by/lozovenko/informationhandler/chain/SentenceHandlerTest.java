@@ -23,8 +23,7 @@ public class SentenceHandlerTest {
         TextComponent expectedParagraph = TestParagraphProvider.createExpectedParagraph();
 
         handler.handleRequest(paragraph, TestParagraphProvider.TEST_PARAGRAPH);
-        System.out.println(paragraph.compose());
-        System.out.println(expectedParagraph.compose());
+
         assertEquals(paragraph, expectedParagraph);
     }
 }

@@ -5,7 +5,7 @@ import by.lozovenko.informationhandler.composite.TextComposite;
 
 public class ParagraphHandler extends AbstractHandler{
     private AbstractHandler successor = new SentenceHandler();
-    private static final String PARAGRAPH_DELIMITER = "\\R";
+    private static final String PARAGRAPH_DELIMITER = "    ";
 
     @Override
     public void handleRequest(TextComposite composite, String text) {

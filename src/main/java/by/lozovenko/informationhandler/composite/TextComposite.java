@@ -13,6 +13,7 @@ public class TextComposite implements TextComponent{
     @Override
     public String compose(){
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(type.getPrefix());
         components.forEach(component -> stringBuilder.append(component.compose()));
         stringBuilder.append(type.getPostfix());
         return stringBuilder.toString();
@@ -53,5 +54,10 @@ public class TextComposite implements TextComponent{
         int result = type.hashCode();
         result = 31 * result + components.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return this.compose();
     }
 }

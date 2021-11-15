@@ -5,9 +5,14 @@ import by.lozovenko.informationhandler.composite.*;
 import by.lozovenko.informationhandler.exception.ProjectException;
 import by.lozovenko.informationhandler.reader.CustomFileReader;
 import by.lozovenko.informationhandler.reader.impl.CustomFileReaderImpl;
+import by.lozovenko.informationhandler.service.TextService;
+import by.lozovenko.informationhandler.service.impl.TextServiceImpl;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.List;
+import java.util.Map;
 
 public class Program {
     private static final Logger LOGGER = LogManager.getLogger();
@@ -22,10 +27,14 @@ public class Program {
         LOGGER.log(Level.INFO, content);
 
         TextComposite text = new TextComposite(TextComponentType.TEXT);
-        text.add(new LeafSymbol('\t', TextComponentType.SYMBOL, SymbolType.PUNCTUATION));
         ParagraphHandler handler = new ParagraphHandler();
         handler.handleRequest(text, content);
-
-        LOGGER.log(Level.INFO, text.compose());
+        TextService textService = TextServiceImpl.getInstance();
+        Map<TextComponent, Integer> wordsMap = textService.countSameWordsIgnoreCase(text);
+        List<TextComponent> sentencesWithLongestWord = textService.findSentencesWithLongestWord(text);
+        LOGGER.log(Level.INFO, sentencesWithLongestWord);
+        LOGGER.log(Level.INFO, wordsMap);
+        String textCompose = text.compose();
+        LOGGER.log(Level.INFO, textCompose);
     }
 }

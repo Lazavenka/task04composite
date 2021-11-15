@@ -5,7 +5,7 @@ import by.lozovenko.informationhandler.composite.TextComponentType;
 import by.lozovenko.informationhandler.composite.TextComposite;
 
 public class TestParagraphProvider {
-    public static final String TEST_PARAGRAPH = "JAVA (Рига) ob.run() Science! JAVA (Рига) ob.run() Science! JAVA (Рига) ob.run() Science!";
+    public static final String TEST_PARAGRAPH = "    JAVA (Рига) ob.run() Science! JAVA (Рига) ob.run() Science! JAVA (Рига) ob.run() Science! \n";
 
     public static TextComponent createExpectedParagraph(){
         TextComponent paragraph = new TextComposite(TextComponentType.PARAGRAPH);

@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class SentenceHandler extends AbstractHandler{
     private AbstractHandler successor = new LexemeHandler();
-    private static final String SENTENCE_PATTERN = "(.*?[!?.]\s)*(.*[!?.])*"; //TODO need correct regex
+    private static final String SENTENCE_PATTERN = "\\p{Lu}.+?[.?!…]{1,3}(?=\\s|$)";
     @Override
     public void handleRequest(TextComposite composite, String text) {
         Pattern sentencePattern = Pattern.compile(SENTENCE_PATTERN);
