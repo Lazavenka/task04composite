@@ -2,19 +2,26 @@ package by.lozovenko.informationhandler.composite;
 
 import java.util.List;
 
-public class LeafSymbol implements TextComponent{
-    private SymbolType symbolType;
-    private TextComponentType componentType;
-    private char symbol;
-    public LeafSymbol(char symbol, TextComponentType componentType, SymbolType symbolType){
+public class LeafSymbol implements TextComponent {
+    private final SymbolType symbolType;
+    private final TextComponentType componentType;
+    private final char symbol;
+
+    public LeafSymbol(char symbol, TextComponentType componentType, SymbolType symbolType) {
         this.symbol = symbol;
         this.componentType = componentType;
         this.symbolType = symbolType;
 
     }
+
     @Override
     public String compose() {
         return String.valueOf(symbol);
+    }
+
+    @Override
+    public TextComponent copyTextComponent() {
+        return new LeafSymbol(symbol, componentType, symbolType);
     }
 
     @Override

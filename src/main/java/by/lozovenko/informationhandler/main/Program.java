@@ -18,6 +18,7 @@ public class Program {
     private static final Logger LOGGER = LogManager.getLogger();
 
     private static final String FILEPATH = "data/text.txt";
+
     public static void main(String[] args) throws ProjectException {
         ClassLoader loader = Program.class.getClassLoader();
         String absolutePath = loader.getResource(FILEPATH).getPath();
@@ -36,5 +37,8 @@ public class Program {
         LOGGER.log(Level.INFO, wordsMap);
         String textCompose = text.compose();
         LOGGER.log(Level.INFO, textCompose);
+        TextComposite sortedText = textService.sortParagraphBySentenceCount(text);
+        String sortedTextCompose = sortedText.compose();
+        LOGGER.log(Level.INFO, sortedTextCompose);
     }
 }

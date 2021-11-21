@@ -1,6 +1,6 @@
 package by.lozovenko.informationhandler.exception;
 
-public class ProjectException extends Exception{
+public class ProjectException extends Exception {
     public ProjectException() {
         super();
     }

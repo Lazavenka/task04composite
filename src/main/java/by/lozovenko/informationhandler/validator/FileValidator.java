@@ -5,7 +5,7 @@ import java.io.File;
 public class FileValidator {
     private static FileValidator INSTANCE;
 
-    private FileValidator(){
+    private FileValidator() {
     }
 
     public static FileValidator getInstance() {
@@ -15,7 +15,7 @@ public class FileValidator {
         return INSTANCE;
     }
 
-    public boolean validate(String filepath){
+    public boolean validate(String filepath) {
         File file = new File(filepath);
         return file.isFile() && file.canRead();
     }

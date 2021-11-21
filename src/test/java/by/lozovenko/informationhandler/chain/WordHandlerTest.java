@@ -4,7 +4,6 @@ import by.lozovenko.informationhandler.composite.TextComponent;
 import by.lozovenko.informationhandler.composite.TextComponentType;
 import by.lozovenko.informationhandler.composite.TextComposite;
 import by.lozovenko.informationhandler.testdata.TestLexemeProvider;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -13,11 +12,13 @@ import static org.testng.Assert.*;
 public class WordHandlerTest {
     TextComposite lexeme;
     AbstractHandler handler;
+
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         lexeme = new TextComposite(TextComponentType.LEXEME);
         handler = new WordHandler();
     }
+
     @Test
     public void testHandleRequestJavaWord() {
         TextComponent expectedJavaLexeme = TestLexemeProvider.createExpectedJavaLexeme();
@@ -26,6 +27,7 @@ public class WordHandlerTest {
 
         assertEquals(lexeme, expectedJavaLexeme);
     }
+
     @Test
     public void testHandleRequestScienceWord() {
         TextComponent expectedJavaLexeme = TestLexemeProvider.createExpectedScienceLexeme();

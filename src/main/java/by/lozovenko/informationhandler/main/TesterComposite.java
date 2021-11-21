@@ -62,7 +62,7 @@ public class TesterComposite {
 
         LeafSymbol i = new LeafSymbol('a', TextComponentType.SYMBOL, SymbolType.LETTER);
         LeafSymbol p = new LeafSymbol('s', TextComponentType.SYMBOL, SymbolType.LETTER);
-        LeafSymbol b = new LeafSymbol('s', TextComponentType.SYMBOL, SymbolType.LETTER);
+        LeafSymbol b = new LeafSymbol('k', TextComponentType.SYMBOL, SymbolType.LETTER);
         LeafSymbol b1 = new LeafSymbol('!', TextComponentType.SYMBOL, SymbolType.PUNCTUATION);
 
         word2s2.add(i);

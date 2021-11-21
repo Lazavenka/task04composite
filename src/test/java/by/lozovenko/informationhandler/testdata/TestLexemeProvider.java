@@ -7,7 +7,8 @@ public class TestLexemeProvider {
     public static final String TEST_OB_RUN_LEXEME = "ob.run()";
     public static final String TEST_RIGA_LEXEME = "(Рига)";
     public static final String TEST_JAVA_LEXEME = "JAVA";
-    public static TextComponent createExpectedScienceLexeme(){
+
+    public static TextComponent createExpectedScienceLexeme() {
         TextComponent lexeme = new TextComposite(TextComponentType.LEXEME);
         TextComponent word = new TextComposite(TextComponentType.WORD);
         word.add(new LeafSymbol('S', TextComponentType.SYMBOL, SymbolType.LETTER));
@@ -23,7 +24,7 @@ public class TestLexemeProvider {
         return lexeme;
     }
 
-    public static TextComponent createExpectedObRunLexeme(){
+    public static TextComponent createExpectedObRunLexeme() {
         TextComponent lexeme = new TextComposite(TextComponentType.LEXEME);
         TextComponent word1 = new TextComposite(TextComponentType.WORD);
         TextComponent word2 = new TextComposite(TextComponentType.WORD);
@@ -41,7 +42,7 @@ public class TestLexemeProvider {
         return lexeme;
     }
 
-    public static TextComponent createExpectedJavaLexeme(){
+    public static TextComponent createExpectedJavaLexeme() {
         TextComponent lexeme = new TextComposite(TextComponentType.LEXEME);
         TextComponent word = new TextComposite(TextComponentType.WORD);
 
@@ -55,7 +56,7 @@ public class TestLexemeProvider {
         return lexeme;
     }
 
-    public static TextComponent createExpectedRigaLexeme(){
+    public static TextComponent createExpectedRigaLexeme() {
         TextComponent lexeme = new TextComposite(TextComponentType.LEXEME);
         TextComponent word = new TextComposite(TextComponentType.WORD);
 

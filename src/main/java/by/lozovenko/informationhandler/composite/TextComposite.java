@@ -3,21 +3,31 @@ package by.lozovenko.informationhandler.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextComposite implements TextComponent{
-    private TextComponentType type;
-    private List<TextComponent> components = new ArrayList<>();
+public class TextComposite implements TextComponent {
+    private final TextComponentType type;
+    private final List<TextComponent> components;
 
-    public TextComposite(TextComponentType type){
+    public TextComposite(TextComponentType type) {
         this.type = type;
+        this.components = new ArrayList<>();
     }
+
     @Override
-    public String compose(){
+    public String compose() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(type.getPrefix());
         components.forEach(component -> stringBuilder.append(component.compose()));
         stringBuilder.append(type.getPostfix());
         return stringBuilder.toString();
     }
+
+    @Override
+    public TextComponent copyTextComponent() {
+        TextComponent copy = new TextComposite(this.type);
+        this.components.forEach(child -> copy.add(child.copyTextComponent()));
+        return copy;
+    }
+
     @Override
     public boolean add(TextComponent component) {
         return components.add(component);

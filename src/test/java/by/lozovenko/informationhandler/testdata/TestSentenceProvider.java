@@ -4,7 +4,8 @@ import by.lozovenko.informationhandler.composite.*;
 
 public class TestSentenceProvider {
     public static final String TEST_SCIENCE_SENTENCE = "JAVA (Рига) ob.run() Science!";
-    public static TextComponent createTestScienceSentence(){
+
+    public static TextComponent createTestScienceSentence() {
         TextComponent sentence = new TextComposite(TextComponentType.SENTENCE);
         TextComponent javaLexeme = TestLexemeProvider.createExpectedJavaLexeme();
         TextComponent rigaLexeme = TestLexemeProvider.createExpectedRigaLexeme();

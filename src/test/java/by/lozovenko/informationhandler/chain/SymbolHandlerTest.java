@@ -12,8 +12,9 @@ import static org.testng.Assert.*;
 public class SymbolHandlerTest {
     TextComposite word;
     AbstractHandler handler;
+
     @BeforeClass
-    public void setUp(){
+    public void setUp() {
         word = new TextComposite(TextComponentType.WORD);
         handler = new SymbolHandler();
     }

@@ -4,7 +4,8 @@ import by.lozovenko.informationhandler.composite.*;
 
 public class TestWordProvider {
     public static final String TEST_SCIENCE_WORD = "Science";
-    public static TextComposite createExpectedWord(){
+
+    public static TextComposite createExpectedWord() {
         TextComposite word = new TextComposite(TextComponentType.WORD);
         word.add(new LeafSymbol('S', TextComponentType.SYMBOL, SymbolType.LETTER));
         word.add(new LeafSymbol('c', TextComponentType.SYMBOL, SymbolType.LETTER));

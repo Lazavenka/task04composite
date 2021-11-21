@@ -8,12 +8,14 @@ import static org.testng.Assert.*;
 
 public class TextCompositeTest {
     TextComposite testText;
+
     @BeforeClass
-    public void setUp(){
+    public void setUp() {
         testText = new TextComposite(TextComponentType.TEXT);
         TextComponent testParagraph = TestParagraphProvider.createExpectedParagraph();
         testText.add(testParagraph);
     }
+
     @Test
     public void testCompose() {
         String expectedString = TestParagraphProvider.TEST_PARAGRAPH;
